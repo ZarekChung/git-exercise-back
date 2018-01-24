@@ -1,7 +1,21 @@
   
-  <ul>
-   <% @users.each do |users| %>
-     <li><%= users.name %>
-     </li>
-    <% end %>
-  </ul>
+  <h1>User List</h1>
+    <table>
+     <tr>
+       <td>Name </td>    
+       <td>Role </td>
+     </tr>
+      <% @users.each do |users| %>   
+     <tr>
+      <td><%= users.name %></td>
+      <td>
+        <% if users.is_admin?%>
+        <%= users.role %>
+        <%end %>
+      </td>
+     </tr>
+     <% end %>
+      </table>
+
+   
+  
